@@ -3,3 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+/* .prose h3 { @apply text-lg font-semibold mt-6; }
+.prose ul { @apply list-disc pl-6; }
+.prose ol { @apply list-decimal pl-6; } */

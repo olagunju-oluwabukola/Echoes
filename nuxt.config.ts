@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
-      '@tailwindcss/postcss': {}, // ✅ correct plugin name
+      '@tailwindcss/postcss': {}, 
       autoprefixer: {},
     },
   },
