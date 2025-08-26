@@ -1,39 +1,38 @@
 <template>
-  <div class="max-w-4xl mx-auto px-4">
-    <BlogHeader :title="blog.title" :date="blog.date" />
-    <img :src="blog.mainImage" alt="" class="my-6 rounded-lg" />
-    <BlogContent>
-      <p v-for="(para, i) in blog.content" :key="i">{{ para }}</p>
-    </BlogContent>
-    <Comments :comments="blog.comments" />
-    <SimilarPosts :posts="blog.similar" />
+  <div class="min-h-screen bg-gray-100">
+
+    <div class="max-w-6xl mx-auto grid grid-cols-12 gap-6 mt-6 px-4">
+      <!-- Left -->
+      <div class="col-span-8 space-y-4 bg-white px-6 mt-6">
+        <WritePost />
+        <Tabs v-model:activeTab="activeTab" />
+
+        <!-- Conditionally show stuff -->
+        <div v-if="activeTab === 'For you'">
+          <PostCard v-for="i in 2" :key="'foryou-' + i" />
+        </div>
+        <div v-else-if="activeTab === 'Following'">
+          <p class="text-gray-500">No posts from people you follow yet.</p>
+        </div>
+        <div v-else-if="activeTab === 'New'">
+          <PostCard v-for="i in 2" :key="'new-' + i" />
+        </div>
+        <div v-else-if="activeTab === 'Trending'">
+          <PostCard v-for="i in 3" :key="'trending-' + i" />
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="col-span-4 space-y-4">
+        <Feeds />
+        <RecommendedTopics />
+      </div>
+    </div>
   </div>
 </template>
 
-<script setup lang="ts">
-import BlogHeader from '../components/blog/blogHeader.vue'
-import BlogContent from '../components/blog/blogContent.vue'
-import Comments from '../components/blog/commentsSection.vue'
-import SimilarPosts from '../components/blog/SimilarPosts.vue'
-
-const route = useRoute()
-
-const blog = {
-  title: 'How to make fluffy pancakes',
-  date: '2025-08-13',
-  mainImage: '/pancake.jpg',
-  content: [
-    'Step 1: Mix your batter.',
-    'Step 2: Heat the pan.',
-    'Step 3: Pour and cook.'
-  ],
-  comments: [
-    { author: 'Jane', text: 'Love this recipe!' },
-    { author: 'Mark', text: 'Turned out perfect.' }
-  ],
-  similar: [
-    { id: 'cake1', title: 'How To Bake Cake', image: '/cake.jpg' },
-    { id: 'cake2', title: 'Chocolate Cake Tips', image: '/cake.jpg' }
-  ]
-}
+<script setup>
+import { ref } from "vue";
+import Feeds from "~/components/feeds.vue";
+const activeTab = ref("Trending");
 </script>
