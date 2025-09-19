@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Header -->
-    <header class="flex items-center justify-between px-20 py-4 bg-white">
+    <header class="flex items-center justify-between  px-4 md:px-20 py-4 bg-white">
       <!-- Logo -->
       <div class="text-3xl font-bold">Echoes</div>
 
@@ -23,7 +23,7 @@
             v-model="searchQuery"
             type="text"
             placeholder="Search"
-            class="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring"
+            class="w-full pl-10 pr-3 md:py-2 py-1 border rounded-3xl focus:outline-none focus:ring"
             @keyup.enter="handleSearch"
           />
         </div>
