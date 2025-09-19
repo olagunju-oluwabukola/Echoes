@@ -67,13 +67,13 @@ useHead({
 
           <!-- Title -->
           <h1 class="text-xl md:text-3xl font-bold text-gray-900 mb-4 ">{{ post.title }}</h1>
-          <p class="font-normal text-xs md:text-sm">{{ post.intro }}</p>
+          <p class="font-normal text-xs md:text-sm leading-loose">{{ post.intro }}</p>
         </div>
 
 
         <!-- Article Content -->
         <div class="px-6 py-6">
-          <div v-html="post.content" class="prose md:prose-lg text-sm md:text-[16px] max-w-none"></div>
+          <div v-html="post.content" class="prose md:prose-lg text-sm md:text-[16px] max-w-none leading-7"></div>
         </div>
 
         <!-- Content Images -->
@@ -99,7 +99,11 @@ useHead({
 <!-- direction -->
            <div class="px-6 py-6">
              <p class="mb-4 font-medium">Direction</p>
-          <div v-html="post.direction" class="prose prose-sm  text-sm max-w-none"></div>
+          <div
+  v-html="post.direction"
+  class="prose text-xs md:text-sm max-w-none leading-loose space-y-2"
+></div>
+
         </div>
 <!--
         progressImg -->
@@ -126,7 +130,11 @@ useHead({
         <!-- tip -->
         <div class="px-6 py-6">
           <p class="mb-4 font-medium">Tips</p>
-          <div v-html="post.tip" class="prose prose-sm  text-sm max-w-none"></div>
+         <div
+  v-html="post.tip"
+  class="prose text-xs md:text-sm max-w-none leading-loose space-y-2"
+></div>
+
         </div>
 
         <!-- Reactions Bar -->

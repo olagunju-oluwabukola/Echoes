@@ -11,8 +11,8 @@
        <div class="flex items-center space-x-3">
         <img src="@/assets/images/avatar.png" class="w-10 h-10 rounded-full" />
         <div>
-          <p class="font-medium">Mira cooking receipe</p>
-          <p class="text-sm text-gray-500">I just love to share new home made receies.</p>
+          <p class="font-medium text-sm md:text-base">Mira cooking receipe</p>
+          <p class="md:text-sm text-gray-500 text-xs ">I just love to share new home made receies.</p>
         </div>
       </div>
       <div class="text-right">
