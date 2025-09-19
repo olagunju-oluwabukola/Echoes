@@ -17,12 +17,12 @@
     </div>
 
     <!-- Title -->
-    <h2 class="font-semibold mb-1 hover:text-blue-600 transition-colors text-sm md:text-base">
+    <h2 class="font-medium mb-1 hover:text-blue-600 transition-colors text-sm md:text-base">
       {{ post.title }}
     </h2>
 
     <!-- Content Preview -->
-    <p class="text-xs text-gray-600 line-clamp-3 mb-2  md:text-base">
+    <p class="text-xs text-gray-600 line-clamp-3 mb-2  md:text-base leading-relaxed">
       {{ post.excerpt }}
     </p>
 
@@ -56,7 +56,6 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const { formatDate } = usePosts()
 const router = useRouter()
 
 const navigateToPost = (): void => {
